@@ -31,7 +31,7 @@ Prepend the hidden fields to your form:
     <form action="/123" method="POST">
       <fieldset>
         <input name="_method" type="hidden" value="PUT" />
-        <input name="_if_match" type="hidden" value='"202cb962ac59075b964b07152d234b70"' />
+        <input name="_if_match" type="hidden" value='202cb962ac59075b964b07152d234b70' />
         <input name="_if_unmodified_since" type="hidden" value="Tue, 08 May 2012 00:00:00 GMT" />
         <p>
           <label for="title"></label>
