@@ -10,7 +10,7 @@ describe Rack::ConditionalForms do
     
     it 'must override If-Match on POST' do
       post '/', _if_match: '123'
-      JSON.parse(last_response.body)['HTTP_IF_MATCH'].must_equal '123'
+      JSON.parse(last_response.body)['HTTP_IF_MATCH'].must_equal '"123"'
     end
     
     it 'wont override If-Match on POST if not present' do
@@ -20,7 +20,7 @@ describe Rack::ConditionalForms do
   
     it 'must override If-Match on PUT' do
       put '/', _if_match: '123'
-      JSON.parse(last_response.body)['HTTP_IF_MATCH'].must_equal '123'
+      JSON.parse(last_response.body)['HTTP_IF_MATCH'].must_equal '"123"'
     end
     
     it 'wont override If-Match on PUT if not present' do
@@ -30,7 +30,7 @@ describe Rack::ConditionalForms do
   
     it 'must override If-Match on DELETE' do
       delete '/', _if_match: '123'
-      JSON.parse(last_response.body)['HTTP_IF_MATCH'].must_equal '123'
+      JSON.parse(last_response.body)['HTTP_IF_MATCH'].must_equal '"123"'
     end
     
     it 'wont override If-Match on DELETE if not present' do

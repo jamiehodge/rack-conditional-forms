@@ -14,7 +14,7 @@ module Rack
     def call(env)
       if (match = if_match(env)) && !match.empty?
         env['rack.conditionalforms.original_match'] = env['HTTP_IF_MATCH']
-        env['HTTP_IF_MATCH'] = if_match(env)
+        env['HTTP_IF_MATCH'] = '"%s"' % if_match(env)
       end
       
       if (unmodified_since = if_unmodified_since(env)) && !unmodified_since.empty?
