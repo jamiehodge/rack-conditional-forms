@@ -22,7 +22,7 @@ Or install it yourself as:
     require 'rack/conditional-forms'
     use Rack::ConditionalForms
     
-To use Rack::SslEnforcer in your Rails application, add the following line to your application config file (config/application.rb for Rails 3, config/environment.rb for Rails 2):
+To use Rack::ConditionalForms in your Rails application, add the following line to your application config file (config/application.rb for Rails 3, config/environment.rb for Rails 2):
 
     config.middleware.use Rack::ConditionalForms
     
