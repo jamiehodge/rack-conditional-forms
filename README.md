@@ -25,6 +25,25 @@ Or install it yourself as:
 To use Rack::SslEnforcer in your Rails application, add the following line to your application config file (config/application.rb for Rails 3, config/environment.rb for Rails 2):
 
     config.middleware.use Rack::ConditionalForms
+    
+Prepend the hidden fields to your form:
+
+    <form action="/123" method="POST">
+      <fieldset>
+        <input name="_method" type="hidden" value="PUT" />
+        <input name="_if_match" type="hidden" value="202cb962ac59075b964b07152d234b70" />
+        <input name="_if_unmodified_since" type="hidden" value="Tue, 08 May 2012 00:00:00 GMT" />
+        <p>
+          <label for="title"></label>
+          <input name="title" value="Example form" />
+        </p>
+        <p>
+          <input type="submit" />
+        </p>
+      </fieldset>
+    </form>
+
+The request's `HTTP_IF_MATCH` and `HTTP_IF_UNMODIFIED_SINCE` headers will then be set to `202cb962ac59075b964b07152d234b70` and `Tue, 08 May 2012 00:00:00 GMT`, respectively.
 
 ## Contributing
 
