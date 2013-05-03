@@ -1,1 +1,1 @@
-require 'rack/ssl-conditional-forms'
+require 'rack/conditional-forms'
